@@ -1,0 +1,23 @@
+.header {
+  @include flex;
+  width: 100%;
+  padding: 10px;
+  background-color: $color-blue-dark;
+}
+
+.management {
+  @include flex($just: flex-end);
+  gap: 10px;
+  width: 100%;
+}
+
+.management__filter {
+  padding: 5px;
+  background-color: $color-beige;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
