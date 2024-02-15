@@ -10,6 +10,7 @@ const labelTitle = createCustomElem('label', ['create-form__label'], 'Title');
 const labelDescription = createCustomElem('label', ['create-form__label'], 'Description');
 
 const inputTitle = createCustomElem('input', ['crete-form__input']);
+inputTitle.required = true;
 const InputDescription = createCustomElem('textarea', ['crete-form__input']);
 
 const addBtn = createCustomElem('button', ['create-form__add-btn'], 'Add task');
@@ -29,10 +30,10 @@ function handlerSubmitCreateForm(event) {
   event.preventDefault();
   const body = document.body;
   const todoList = document.querySelector('.todo__list');
-  
+
   const title = inputTitle.value;
   const description = InputDescription.value
-  
+
   const newCard = createCard(title, description);
   todoList.append(newCard);
   inputTitle.value = '';
