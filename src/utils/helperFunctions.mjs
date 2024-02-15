@@ -4,12 +4,12 @@ const createCustomElem = (
   tag,
   classNames,
   content = '') => {
-    const element = document.createElement(tag);
-    const className = classNames.join(' ');
-    element.className = className;
-    element.textContent = content;
+  const element = document.createElement(tag);
+  const className = classNames.join(' ');
+  element.className = className;
+  element.textContent = content;
 
-    return element;
+  return element;
 };
 
 async function addTaskInStorage(title, description, date, status) {
@@ -42,4 +42,15 @@ function updateTaskInStorage(title) {
   return;
 }
 
-export { createCustomElem, addTaskInStorage, updateTaskInStorage }
+function deleteTaskFromStorage(title) {
+  let tasks = localStorage.getItem('tasks');
+  const hasTasksInStorage = !!tasks;
+  if (hasTasksInStorage) {
+    tasks = JSON.parse(tasks);
+    const updateTasks = tasks.filter((task) => !(task.title === title));
+    localStorage.setItem('tasks', JSON.stringify(updateTasks));
+  }
+  return;
+}
+
+export { createCustomElem, addTaskInStorage, updateTaskInStorage, deleteTaskFromStorage }

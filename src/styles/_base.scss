@@ -4,10 +4,26 @@
   box-sizing: border-box;
 }
 
+body {
+  &.popup-open {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
 .root {
   position: relative;
   @include flex($direction: column);
   width: 100%;
   min-height: 100vh;
   background-color: $color-blue-light;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
 }

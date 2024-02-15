@@ -15,6 +15,7 @@ filterSelect.addEventListener('change', handlerChangeSelect)
 
 function handlerClickBtnCreate() {
   const body = document.body;
+  body.classList.add('popup-open');
   body.append(popup);
 };
 
@@ -25,6 +26,12 @@ function handlerChangeSelect(event) {
 
 if (hasTasksInStorage) {
   tasks = JSON.parse(tasks);
+  const sortedTasks = tasks.sort((a, b) => {
+    if(a.status) {
+      return -1;
+    }
+    return 1;
+  });
 
   tasks.forEach((todoData) => {
     const { title, description, date, status } = todoData;

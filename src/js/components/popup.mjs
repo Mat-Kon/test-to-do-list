@@ -27,15 +27,18 @@ function handlerClickPopup(event) {
 
 function handlerSubmitCreateForm(event) {
   event.preventDefault();
+  const body = document.body;
   const todoList = document.querySelector('.todo__list');
-
+  
   const title = inputTitle.value;
   const description = InputDescription.value
-
+  
   const newCard = createCard(title, description);
   todoList.append(newCard);
   inputTitle.value = '';
   InputDescription.value = '';
+  body.classList.remove('popup-open');
+  location.reload();
   popup.remove();
 }
 
