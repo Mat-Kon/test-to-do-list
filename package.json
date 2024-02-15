@@ -2,6 +2,7 @@
   "name": "test-to-do-list",
   "version": "1.0.0",
   "description": "Init test work",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "webpack --mode development",

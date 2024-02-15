@@ -1,0 +1,15 @@
+.popup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include flex($just: center);
+  background-color: $color-popup-bg;
+}
+
+.popup-form {
+  @include flex($just: center);
+  width: 25%;
+  background-color: $color-root;
+}
