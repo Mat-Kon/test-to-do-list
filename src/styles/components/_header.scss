@@ -2,5 +2,15 @@
   @include flex;
   width: 100%;
   padding: 10px;
-  background-color: $color-header;
+  background-color: $color-blue-dark;
+}
+
+.management__filter {
+  padding: 5px;
+  background-color: $color-beige;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
 }

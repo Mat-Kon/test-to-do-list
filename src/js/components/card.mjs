@@ -7,7 +7,6 @@ function createCard(title, description, date = '', status = null) {
   if (!date.length) {
     addTaskInStorage(title, description, dateCreate, status);
   }
-  console.log(status);
   const todoCard = createCustomElem('li', ['card', statusCard]);
   const headingElem = createCustomElem('h4', ['card__heading'], title);
   const descriptionElem = createCustomElem('p', ['card__description'], description);
